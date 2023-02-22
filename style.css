@@ -31,7 +31,7 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  width: 100%;
 }
 
 /* ---  Groups & Items --- */
@@ -64,14 +64,26 @@ header {
   color: #fff;
 }
 
-header nav ul li {
+header nav {
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul {
   list-style-type: none;
+  display: flex;
+  padding-left: 0;
 }
 
 header nav ul li a {
   color: #fff;
   text-decoration: none;
-  padding: 0 20px 0 0;
+  margin: 0 20px 0 0;
+  font-size: 20px;
+}
+
+header nav ul li:last-child a {
+  margin-right: 0;
 }
 
 header nav ul li a:hover {
@@ -87,6 +99,7 @@ form {
 
 form label {
   font-weight: bold;
+  font-size: 20px;
 }
 
 form select,
@@ -104,6 +117,11 @@ form button {
   width: 100%;
 }
 
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* -------  Footer ------- */
 
 footer {
@@ -117,3 +135,49 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+
+@media all and (min-width: 800px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+  }
+
+  .logo {
+    font-family: "Pangolin", cursive;
+    font-size: 48px;
+    color: #fff;
+  }
+
+  .group {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  form {
+    border: 2px solid #ff385c;
+    padding: 10px;
+    display: flex;
+  }
+
+  .form-row {
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+  }
+
+  form label {
+    font-size: 15px;
+  }
+  
+  form select,
+  form input {
+    width: 130px;
+  }
+  
+  form button {
+    margin-top: 10px;
+  }
+
+}
